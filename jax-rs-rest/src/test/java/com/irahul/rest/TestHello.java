@@ -33,12 +33,13 @@ import org.junit.Test;
  *
  */
 public class TestHello {
+	private static final String URI_PATH = "jax-rs-rest/hello";
+	private static final String HTTP_LOCALHOST = "http://localhost:8080";
 
 	@Test
-	public void testHello(){
-		
+	public void testHello(){		
 		Client client = ClientBuilder.newClient();
-		WebTarget target = client.target("http://localhost:8080").path("jax-rs-rest/hello");
+		WebTarget target = client.target(HTTP_LOCALHOST).path(URI_PATH);
 		 
 		Response response =	target.request(MediaType.TEXT_PLAIN).get();
 
@@ -47,10 +48,9 @@ public class TestHello {
 	}
 	
 	@Test
-	public void testHelloName(){
-		
+	public void testHelloName(){		
 		Client client = ClientBuilder.newClient();
-		WebTarget target = client.target("http://localhost:8080").path("jax-rs-rest/hello").queryParam("name", "foo");
+		WebTarget target = client.target(HTTP_LOCALHOST).path(URI_PATH).queryParam("name", "foo");
 		 				 
 		Response response =	target.request(MediaType.TEXT_PLAIN).get();
 
@@ -59,10 +59,9 @@ public class TestHello {
 	}
 	
 	@Test
-	public void testHelloXML(){
-		
+	public void testHelloXML(){		
 		Client client = ClientBuilder.newClient();
-		WebTarget target = client.target("http://localhost:8080").path("jax-rs-rest/hello");
+		WebTarget target = client.target(HTTP_LOCALHOST).path(URI_PATH);
 		 				 
 		Response response =	target.request(MediaType.APPLICATION_XML).get();
 
@@ -71,10 +70,9 @@ public class TestHello {
 	}
 	
 	@Test
-	public void testHelloJSON(){
-		
+	public void testHelloJSON(){		
 		Client client = ClientBuilder.newClient();
-		WebTarget target = client.target("http://localhost:8080").path("jax-rs-rest/hello");
+		WebTarget target = client.target(HTTP_LOCALHOST).path(URI_PATH);
 		 				 
 		Response response =	target.request(MediaType.APPLICATION_JSON).get();
 
