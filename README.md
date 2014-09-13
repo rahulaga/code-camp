@@ -15,4 +15,8 @@ Accept:application/xml<br/>
 
 **jax-rs-rest-spring** More involved, uses Spring to initilize and adds dependencies to [hello-spring-annotation](https://github.com/rahulaga/hello-spring-annotation)
 
-**osgidemo** and **springosgidemo** are [OSGi and Spring demos](http://www.irahul.com/2009/09/)
+Do a GET http://localhost:8080/jax-rs-rest-spring/hello?name=<>
+
+You can exclude name or send name=hindi or name=english and see what happens.
+
+**osgidemo** and **springosgidemo** are [OSGi and Spring demos](http://www.irahul.com/2009/09/) from more than a few years ago!
