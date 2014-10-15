@@ -17,6 +17,7 @@ package com.irahul.rest;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 import javax.ws.rs.GET;
+import javax.ws.rs.HeaderParam;
 import javax.ws.rs.Path;
 import javax.ws.rs.QueryParam;
 
@@ -43,7 +44,8 @@ public class Hello {
 	private Greeter greeterEnglish;
 	
 	@GET
-	public String sayHello(@QueryParam(value = "name") String name) {
+	public String sayHello(@QueryParam(value = "name") String name,
+			@HeaderParam(value="X-custom") String myheader) {
 		if(name==null){
 			throw new RuntimeException("name not provided");
 		}
